@@ -21,8 +21,8 @@ Install dependencies
 
 Clone this project and get it running!
 
-```shell
-git clone https://github.com/ebasso/kubernetes-vagrant/
+```
+git clone https://github.com/ebasso/kubernetes-vagrant.git
 
 cd kubernetes-vagrant
 ```
@@ -54,7 +54,7 @@ node2.k8s.com    Ready    <none>   93m    v1.18.3   172.42.42.102   <none>      
 
 Verifying Pods
 
-```shell
+```
 [vagrant@master ~]$ kubectl get pods --all-namespaces
 ```
 
@@ -74,13 +74,13 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 Now I would like to access services running in the cluster from my host machine (the physical machine where the virtualbox nodes are running).
 
 Create the configuration directory
-```shell
+```
 $ mkdir -p ~/.kube
 ```
 
 Find the SSH port of the master
 
-```shell
+```
 $ vagrant port master
 
 The forwarded ports for the machine are listed below. Please note that
@@ -92,7 +92,7 @@ provider supports automatic port collision detection and resolution.
 
 
 Copy the file using scp (ssh password is vagrant)
-```shell
+```
 scp -P 2222 vagrant@127.0.0.1:/home/vagrant/.kube/config ~/.kube/config
 ```
 
@@ -101,16 +101,16 @@ Get Cluster info again
 ```
 kubectl cluster-info
 ```
-![Screen capture of the "kubectl cluster-info" command](readme_images/kubectl_clusterinfo.png)
+![Screen capture of the "kubectl cluster-info" command](readme/kubectl_clusterinfo.png)
 
 
 # Another tasks
 
-* [Deploy Kubernetes Dashboard](docs/deploy-kubernetes-dashboard.md)
+* [Deploy Kubernetes Dashboard](readme/deploy-kubernetes-dashboard.md)
 
 # Examples
 
-* [Example 1: Deploy Nginx](docs/example1-deploy-nginx.md)
+* [Example 1: Deploy Nginx](readme/example1-deploy-nginx.md)
 
 
 ## License
