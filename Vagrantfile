@@ -22,6 +22,7 @@ Vagrant.configure(2) do |config|
       v.memory = 2048
       v.cpus = 2
       v.customize ["modifyvm", :id, "--vram", "6"]
+      v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
       v.customize ["modifyvm", :id, "--audio", "none"]
       v.customize ["modifyvm", :id, "--groups", "/K8s"]
       #[--graphicscontroller none|vboxvga|vmsvga|vboxsvga]
@@ -41,6 +42,7 @@ Vagrant.configure(2) do |config|
         v.memory = 1024
         v.cpus = 1
         v.customize ["modifyvm", :id, "--vram", "6"]
+        v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
         v.customize ["modifyvm", :id, "--audio", "none"]
         v.customize ["modifyvm", :id, "--groups", "/K8s"]
       end

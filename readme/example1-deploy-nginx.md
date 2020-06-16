@@ -1,6 +1,37 @@
 The following example deploys 3 replicas of an echo server running nginx and publishes the http port using a NodePort:
 
 
-```sh
-$ kubectl apply -f yamls/example1-deploy-nginx.yaml 
 ```
+$ kubectl apply -f yamls/example1-deploy-nginx.yaml
+```
+
+Check if pods are ready
+
+```
+$ kubectl get pods
+
+NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-55575cc5b6-227xv   1/1     Running   0          108s
+nginx-deployment-55575cc5b6-gn795   1/1     Running   0          108s
+nginx-deployment-55575cc5b6-mb8z7   1/1     Running   0          108s
+```
+
+Checking service
+
+```
+$ kubectl get svc
+
+NAME                       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/kubernetes         ClusterIP   10.96.0.1       <none>        443/TCP          15m
+service/nginx-service-np   NodePort    10.110.17.111   <none>        8082:**30000**/TCP   2m2s
+```
+
+In a browser, you can access through the adresses:
+
+* https://172.42.42.100:30000
+* https://172.42.42.101:30000
+* https://172.42.42.102:30000
+
+The result is below:
+
+![Screen capture on the browser](readme/nginx-echo-hello.png)
