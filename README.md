@@ -1,5 +1,6 @@
-# kubernetes-vagrant
 Kubernetes Cluster in VirtualBox using Vagrant and CentOS
+=============================
+
 
 In this example, i configured a Kubernetes cluster using kubeadm, by creating 3 Virtualbox nodes, each node running CentOS (master, node1, node2). 
 
