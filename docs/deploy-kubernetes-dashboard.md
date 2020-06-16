@@ -19,7 +19,7 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 Apply the changes:
 
 ```sh
-$ kubectl apply -f yamls/kubernetes-dashboard-service-np.yaml 
+$ kubectl apply -f yamls/kubernetes-dashboard-service-np.yaml
 ```
 
 Get the authentication token to use on the Kubernetes Dashboard authentication realm:

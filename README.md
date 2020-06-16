@@ -6,9 +6,9 @@ In this example, i configured a Kubernetes cluster using kubeadm, by creating 3 
 
 Each virtualbox virtual machine is configured using 'Bridge' networking. As a result, I have the following setup:
 
-* Master node 'master.k8s.com' running at 172.42.42.100 (virtualbox)
-* Worker node 1 'node1.k8s.com' running at 172.42.42.101 (virtualbox)
-* Worker node 2 'node2.k8s.com' running at 172.42.42.102 (virtualbox)
+* Master node **master.k8s.com** running at 172.42.42.100 (virtualbox)
+* Worker node 1 **node1.k8s.com** running at 172.42.42.101 (virtualbox)
+* Worker node 2 **node2.k8s.com** running at 172.42.42.102 (virtualbox)
 
 
 # Setup Environment
@@ -73,8 +73,6 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 Now I would like to access services running in the cluster from my host machine (the physical machine where the virtualbox nodes are running).
 
-Copy the Kubernetes config to your host home .kube dir
-
 Create the configuration directory
 ```shell
 $ mkdir -p ~/.kube
@@ -98,19 +96,21 @@ Copy the file using scp (ssh password is vagrant)
 scp -P 2222 vagrant@127.0.0.1:/home/vagrant/.kube/config ~/.kube/config
 ```
 
+Get Cluster info again
+
 ```
 kubectl cluster-info
 ```
-![Screen capture of the "kubectl cluster-info" command](../readme_images/kubectl_clusterinfo.png)
+![Screen capture of the "kubectl cluster-info" command](readme_images/kubectl_clusterinfo.png)
 
 
 # Another tasks
 
-* [Deploy Kubernetes Dashboard](docs/deploy_kubernetes_dashboard.md)
+* [Deploy Kubernetes Dashboard](docs/deploy-kubernetes-dashboard.md)
 
 # Examples
 
-* [Example 1: Deploy Nginx](docs/example1_deploy_nginx.md)
+* [Example 1: Deploy Nginx](docs/example1-deploy-nginx.md)
 
 
 ## License
