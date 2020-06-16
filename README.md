@@ -15,9 +15,9 @@ Each virtualbox virtual machine is configured using 'Bridge' networking. As a re
 
 Install dependencies
 
-* [VirtualBox][virtualbox] 6.1 or greater.
-* [Vagrant][vagrant] 2.2.9 or greater.
-* [Kubectl][kubectl] 1.18.x or greater.
+* VirtualBox 6.1 or greater.
+* Vagrant 2.2.9 or greater.
+* Kubectl 1.18.x or greater.
 
 Clone this project and get it running!
 
