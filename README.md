@@ -4,11 +4,14 @@ Kubernetes Cluster in VirtualBox using Vagrant and CentOS
 
 In this example, i configured a Kubernetes cluster using kubeadm, by creating 3 Virtualbox nodes, each node running CentOS (master, node1, node2). 
 
-Each virtualbox virtual machine is configured using 'Bridge' networking. As a result, I have the following setup:
+Each virtualbox virtual machine is configured with 2 interfaces, with the following networking. :
+
+![Screen capture of the "kubectl cluster-info" command](readme/k8s-network.png)
 
 * Master node **master.k8s.com** running at 172.42.42.100 (virtualbox)
 * Worker node 1 **node1.k8s.com** running at 172.42.42.101 (virtualbox)
 * Worker node 2 **node2.k8s.com** running at 172.42.42.102 (virtualbox)
+
 
 
 # Setup Environment
