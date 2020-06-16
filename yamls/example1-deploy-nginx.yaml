@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-echo
-          image: gcr.io/google_containers/echoserver:1.8          
+          image: gcr.io/google_containers/echoserver:1.8 
 
 ---
 apiVersion: v1
@@ -28,7 +28,7 @@ spec:
   ports:
     - port: 8082        # Cluster IP http://10.109.199.234:8082
       targetPort: 8080  # Application port
-      nodePort: 30000   # Example (EXTERNAL-IP VirtualBox IPs) http://192.168.50.11:30000/ http://192.168.50.12:30000/ http://192.168.50.13:30000/
+      nodePort: 30000   # Example (EXTERNAL-IP VirtualBox IPs) http://172.42.42.100:30000/ http://172.42.42.101:30000/ http://172.42.42.102:30000/
       protocol: TCP
       name: http
   selector:
